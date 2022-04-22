@@ -4,7 +4,6 @@ from project.database.models.stock import Stock
 
 class User(db.Document):
     email = db.EmailField(required=True, unique=True)
-    function = db.StringField(requiered=True)
     password = db.StringField(required=True, min_length=6) 
 
     def hash_password(self):
