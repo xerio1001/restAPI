@@ -1,10 +1,10 @@
 from flask import request, Response
 from flask_restful import Resource
-from database.models.user import Stock
+from project.database.models.user import Stock
 from flask_jwt_extended import jwt_required
 from mongoengine.errors import FieldDoesNotExist, \
 NotUniqueError, DoesNotExist, ValidationError, InvalidQueryError
-from resources.errors import *
+from project.resources.errors import *
 
 class StockApi(Resource):
   @jwt_required()

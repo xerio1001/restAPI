@@ -1,5 +1,5 @@
 from flask import request, Response
-from database.models.user import User
+from project.database.models.user import User
 from flask_restful import Resource
 
 class UsersApi(Resource):
