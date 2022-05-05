@@ -41,6 +41,7 @@ class StockByIdApi(Resource):
         raise UpdatingError
       except Exception as e:
         print(e)
+        raise InternalServerError
   
     @jwt_required()
     def delete(self, id):
