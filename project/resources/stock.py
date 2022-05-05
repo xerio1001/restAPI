@@ -39,8 +39,8 @@ class StockByIdApi(Resource):
         raise SchemaValidationError
       except DoesNotExist:
         raise UpdatingError
-      except Exception:
-        raise InternalServerError
+      except Exception as e:
+        print(e)
   
     @jwt_required()
     def delete(self, id):
