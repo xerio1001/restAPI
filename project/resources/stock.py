@@ -29,9 +29,9 @@ class StockApi(Resource):
   
 class StockByIdApi(Resource):
     @jwt_required()
-    def put(self, id):
+    def put(self, barcode):
       try:
-        stock = Stock.objects.get(id=id)
+        stock = Stock.objects.get(barcode=barcode)
         body = request.get_json()
         stock.update(**body)
         return '', 200
