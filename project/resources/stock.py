@@ -62,4 +62,3 @@ class StockByIdApi(Resource):
         raise NotExistsError
       except Exception:
         raise InternalServerError
-
