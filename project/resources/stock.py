@@ -54,11 +54,12 @@ class StockByIdApi(Resource):
         raise InternalServerError
     
     @jwt_required()
-    def get(self, id):
+    def get(self, barcode):
       try:
-        stocks = Stock.objects.get(id=id).to_json()
+        stocks = Stock.objects.get(barcode=barcode).to_json()
         return Response(stocks, mimetype="application/json", status=200)
       except DoesNotExist:
         raise NotExistsError
       except Exception:
         raise InternalServerError
+

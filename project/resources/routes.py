@@ -5,7 +5,7 @@ from .suppliers import supplierApi, supplierByIdApi
 
 def initialize_routes(api):
     api.add_resource(StockApi, '/stock')
-    api.add_resource(StockByIdApi, '/stock/<id>')
+    api.add_resource(StockByIdApi, '/stock/<barcode>')
 
     api.add_resource(supplierApi, '/supplier')
     api.add_resource(supplierByIdApi, '/supplier/<id>')
