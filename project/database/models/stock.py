@@ -6,4 +6,5 @@ class Stock(db.Document):
     amountInStock = db.IntField(required=True)
     supplier = db.StringField(required=True)
     barcode = db.StringField(required=False)
+    ordered = db.BooleanField(required=True)
     
